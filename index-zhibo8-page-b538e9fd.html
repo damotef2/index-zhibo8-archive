@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>直播吧 · 稳定入口介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #f5f9fd;
+            color: #1f2a44;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page {
+            max-width: 920px;
+            margin: 0 auto;
+            width: 100%;
+            flex: 1;
+        }
+
+        /* 网格卡片肌理 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 600px) {
+            .card-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 28px 24px;
+            box-shadow: 0 4px 12px rgba(0, 60, 80, 0.06);
+            border: 1px solid #deecf2;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 18px rgba(0, 100, 120, 0.08);
+        }
+
+        /* 蓝绿色点缀 */
+        .accent {
+            color: #1a7a6b;
+        }
+
+        .accent-bg {
+            background: #e2f3f0;
+        }
+
+        .accent-border {
+            border-left: 5px solid #1a7a6b;
+            padding-left: 14px;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+            color: #0f2c36;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #3f5a6b;
+            max-width: 520px;
+            margin: 0 auto 28px;
+            line-height: 1.6;
+        }
+
+        .hero .sub a {
+            color: #1a7a6b;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1.5px dotted #1a7a6b;
+        }
+
+        .hero .sub a:hover {
+            border-bottom-style: solid;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #d4ece8;
+            color: #11574b;
+            font-size: 0.8rem;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-weight: 500;
+            margin-bottom: 24px;
+            letter-spacing: 0.3px;
+        }
+
+        /* 说明区 / 优势区 */
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title .accent {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #1a7a6b;
+            border-radius: 10px;
+        }
+
+        .feature-item {
+            margin-bottom: 20px;
+        }
+
+        .feature-item strong {
+            display: block;
+            font-weight: 600;
+            color: #1c3f4e;
+            margin-bottom: 4px;
+        }
+
+        .feature-item p {
+            color: #2c4a5a;
+            font-size: 0.95rem;
+        }
+
+        /* FAQ 摘要 */
+        .faq-summary {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 28px 24px;
+            border: 1px solid #deecf2;
+            margin: 28px 0;
+        }
+
+        .faq-summary h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #0f2c36;
+        }
+
+        .faq-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #e5eff5;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            color: #1a4e5e;
+            margin-bottom: 4px;
+        }
+
+        .faq-a {
+            color: #3a5a6a;
+            font-size: 0.95rem;
+        }
+
+        /* 底部链接 */
+        .footer-links {
+            margin-top: 40px;
+            padding: 24px 0 10px;
+            border-top: 1px solid #d2e2ea;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #4f6f7f;
+        }
+
+        .footer-links a {
+            color: #1a7a6b;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-note {
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: #6a8a9a;
+        }
+
+        /* 移动端微调 */
+        @media (max-width: 480px) {
+            body {
+                padding: 14px;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .card {
+                padding: 22px 18px;
+            }
+            .faq-summary {
+                padding: 20px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- Hero 区 -->
+    <div class="hero">
+        <div class="hero-badge">· 稳定访问 ·</div>
+        <h1>直播吧 · 入口说明</h1>
+        <div class="sub">
+            很多朋友习惯在空闲时打开
+            <a href="https://index-zhibo8.com">直播吧</a>
+            看看赛况、比分或社区讨论。这里整理了几条关于访问与页面结构的介绍，方便新老用户了解。
+        </div>
+    </div>
+
+    <!-- 优势区 + 说明区 混排卡片网格 -->
+    <div class="card-grid">
+        <div class="card">
+            <div class="section-title">
+                <span class="accent"></span> 为什么关注稳定入口
+            </div>
+            <div class="feature-item">
+                <strong>域名的直接作用</strong>
+                <p>index-zhibo8.com 作为聚合入口，不依赖第三方跳转，页面结构清晰。多数情况下能直接加载直播列表和资讯模块，减少中间环节。</p>
+            </div>
+            <div class="feature-item">
+                <strong>页面布局特点</strong>
+                <p>首页默认展示热门赛事、即时比分和讨论区摘要。各卡片区域相对独立，即使某个模块加载稍慢，不影响其他区域浏览。</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="section-title">
+                <span class="accent"></span> 使用中的小提示
+            </div>
+            <div class="feature-item">
+                <strong>网络环境</strong>
+                <p>部分网络下可能需要刷新一次，或使用默认浏览器打开。网页本身经过轻量化处理，移动端数据消耗较低。</p>
+            </div>
+            <div class="feature-item">
+                <strong>内容更新节奏</strong>
+                <p>比分、赛程等内容由站点自动同步。讨论区内容由用户生成，请自行甄别信息，保持友善交流。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 补充说明区（单列） -->
+    <div class="card" style="margin-top: 20px;">
+        <div class="section-title">
+            <span class="accent"></span> 页面结构简述
+        </div>
+        <p style="margin-bottom: 12px;">当您进入 <strong>直播吧</strong> 首页后，从上到下大致分为三个区域：</p>
+        <ul style="padding-left: 22px; color: #2c4a5a; list-style-type: circle;">
+            <li><strong>顶部导航与搜索</strong> — 快速定位赛事或队伍。</li>
+            <li><strong>核心直播/比分卡片</strong> — 按时间排列的比赛条目，点击可看详情。</li>
+            <li><strong>社区与资讯流</strong> — 热帖、短评和视频片段混排。</li>
+        </ul>
+        <p style="margin-top: 14px; font-size: 0.95rem; background: #eaf6f3; padding: 10px 14px; border-radius: 16px;">
+            🏈 提醒：部分浏览器可能会拦截弹窗或自动播放，建议允许站点正常运行。
+        </p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-summary">
+        <h3>常见疑问摘要</h3>
+        <div class="faq-item">
+            <div class="faq-q">Q：为什么有时候打开页面是空白？</div>
+            <div class="faq-a">通常是网络延迟或缓存问题。尝试刷新页面，或清除浏览器缓存后重试。另外，建议使用系统自带浏览器或 Chrome 系浏览器。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q：手机端和电脑端显示一样吗？</div>
+            <div class="faq-a">首页采用响应式设计，手机端会隐藏部分次要模块，保留比分和直播入口。功能基本一致，布局会自动适配宽度。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q：这个页面和直播吧的关系？</div>
+            <div class="faq-a">index-zhibo8.com 是直播吧的常用入口之一，页面内容与主站同步。如果您遇到访问问题，可尝试更换网络或稍后重试。</div>
+        </div>
+        <div style="margin-top: 14px; font-size: 0.9rem; color: #4f6f7f;">
+            以上摘要基于常见用户反馈整理，具体情况可能因版本或网络而异。
+        </div>
+    </div>
+
+    <!-- 底部链接 -->
+    <div class="footer-links">
+        <span>主要入口：<a href="https://index-zhibo8.com">直播吧</a></span>
+        <span style="margin: 0 12px; color: #b0ccd8;">·</span>
+        <span style="color: #4f6f7f;">建议收藏此页以便日常使用</span>
+        <div class="footer-note">
+            页面内容仅供参考 · 非官方声明
+        </div>
+    </div>
+</div>
+</body>
+</html>
